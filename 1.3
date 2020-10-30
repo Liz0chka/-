@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+	double eps;
+	int a;
+	cout << "Enter a: ";
+	cin >> a;
+	double* x = new double[a + 1];
+	double* y = new double[a + 1];
+	cout << "Enter eps: " ;
+	cin >> eps;
+	cout << "Enter a0";
+	cin >> x[0];
+	cout << "Enter b0";
+	cin >> y[0];
+
+	for (int b = 1; b<= a; b++)
+	{
+		if (x[b - 1] < 0)
+			x[b] = pow(sin(x[b - 1] + y[b - 1]), 2);
+		else
+			x[b] = sin(1 + x[b - 1] * y[b - 1] - y[b - 1] * y[b - 1]);
+		y[b] = 0.8 + 2 * sin(y[b - 1]) - 5.5 * sin(x[b - 1]) * sin(x[b - 1]);
+	}
+	
+	for (int b = 1; b <= a; b++)
+	{
+		for (int c = 1; c <= a; c++)
+		{
+			if (x[b] * x[b] - y[c] * y[c] < eps)
+			{
+				cout << "x" << b << " = " << x[b];
+				cout << endl;
+				break;
+			}	
+		}
+	}
+}
+
