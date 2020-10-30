@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+	int a;
+	double Res, pow3;
+	cout << "Enter a: ";
+	cin >> a;
+	double* x = new double[a];
+	for (int b = 0; b < 3; b++)
+	{
+		cout << "Enter x" << b + 1 << " = ";
+		cin >> x[b];
+	}
+	for (int b = 0; b < 3; b++)
+	{
+		pow3 = 1;
+		Res = 3.5 * sin(x[b]) * sin(x[b]) - 2.7 * sin(x[b]) + 1;
+		for (int c = 0; c < a; c++)
+		{
+			pow3 = 2 * pow3 / 3 + Res / (3 * pow3 * pow3);
+		}
+		cout << "Pow (" << Res << ", 1.0/3.0) = " << pow3 << endl;
+	}
+
+
+
+}
