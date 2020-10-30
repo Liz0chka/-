@@ -9,14 +9,21 @@ int main()
 	int a;
 	cout << "Enter a: ";
 	cin >> a;
-	double* x = new double[a + 1];
-	double* y = new double[a + 1];
-	cout << "Enter eps: " ;
-	cin >> eps;
-	cout << "Enter a0";
+	
+		cout << "Enter a0";
 	cin >> x[0];
 	cout << "Enter b0";
 	cin >> y[0];
+	
+	double* x = new double[a + 1];
+	double* y = new double[a + 1];
+
+	cout << "Enter eps: " ;
+
+	cin >> eps;
+
+
+
 
 	for (int b = 1; b<= a; b++)
 	{
